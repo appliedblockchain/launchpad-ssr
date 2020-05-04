@@ -4,6 +4,14 @@ Server Side Rendered React Boilerplate powered by Next and MUI
 
 Based off https://github.com/mui-org/material-ui/tree/master/examples/nextjs + Docker setup
 
+### Setup
+
+Disable telemetry:
+
+```
+npx next telemetry disable
+```
+
 
 ### Run
 
