@@ -4,5 +4,17 @@ services:
   app:
     build:
       context: .
+    # compose - note: expose port only on compose
     ports:
-      - 3000:3000
+      - 3000:30001
+    # swarm
+    deploy: &deploy_defaults
+      replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 1s
+      restart_policy: &restart_policy
+        condition: any
+        delay: 5s
+        max_attempts: 10
+        window: 60s
